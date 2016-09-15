@@ -1,0 +1,13 @@
+db:
+  image: db
+  ports:
+    - "27017:27017"
+app:
+  image: app
+  ports:
+    - "3000:3000"
+  links:
+    - db
+  environment:
+    PASSWORD_SEED: mori-system
+
