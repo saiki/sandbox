@@ -7,7 +7,4 @@ app:
   ports:
     - "3000:3000"
   links:
-    - db
-  environment:
-    PASSWORD_SEED: mori-system
-
+    - db:db
