@@ -7,6 +7,7 @@ RUN npm install -g webpack && npm install -g gulp && npm install && gulp && webp
 ENV MONGO_URI mongodb://db/crowi
 ENV ELASTICSEARCH_URI http://search:9200/crowi
 ENV FILE_UPLOAD local
+ENV REDIS_URL=redis://redis:6379/crowi
 ENV PORT 80
 
 COPY docker-entry.sh /opt/crowi
