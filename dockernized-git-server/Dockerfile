@@ -18,4 +18,11 @@ RUN chown git /opt/git/project.git
 RUN chgrp git /opt/git/project.git
 RUN git init --bare --shared /opt/git/project.git
 
+WORKDIR /home/git
+
+COPY docker-entrypoint.sh /
+RUN chmod +x /docker-entrypoint.sh
+
+ENTRYPOINT ["/docker-entrypoint.sh"]
+
 EXPOSE 22
