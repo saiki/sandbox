@@ -1,0 +1,29 @@
+{
+	"compilerOptions": {
+		"outDir": "./dist/",
+		"sourceMap": true,
+		"strict": true,
+		"module": "es2015",
+		"moduleResolution": "node",
+		"target": "es5",
+		"allowSyntheticDefaultImports": true,
+		"baseUrl": "./", /* Base directory to resolve non-absolute module names. */
+		"paths": { /* A series of entries which re-map imports to lookup locations relative to the 'baseUrl'. */
+			"@": [
+				"src"
+			],
+			"*": [
+				"src/types/*"
+			]
+		},
+		"lib": [
+			"dom",
+			"es5",
+			"es2015.promise"
+		],
+		"experimentalDecorators": true
+	},
+	"include": [
+		"./src/**/*"
+	]
+}
