@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>PureCSSのテスト</title>
+	<link rel="stylesheet" href="https://unpkg.com/purecss@0.6.2/build/pure-min.css" integrity="sha384-UQiGfs9ICog+LwheBSRCt1o5cbyKIHbwjWscjemyBMT9YCUMZffs6UqUTd0hObXD" crossorigin="anonymous"/>
+</head>
+<body>
+	<div id="layout" class="pure-g">
+		<nav id="nav" class="pure-u-1 pure-u-md-1-4">
+				<ul class="pure-menu">
+					<li>menu 1</li>
+					<li>menu 2</li>
+				</ul>
+		</nav>
+		<div id="content" class="pure-u-1 pure-u-md-3-4">
+			main contents.
+		</div>
+	</div>
+<style>
+#layout {
+	padding-left 20%;
+	left: 0;
+	position: relative;
+}
+@media (min-width: 48em)
+#menu {
+    left: 150px;
+}
+#menu {
+    margin-left: -150px;
+    width: 150px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 1000;
+    background: #191818;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+#layout, #menu, .menu-link {
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    -ms-transition: all 0.2s ease-out;
+    -o-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+}
+#content {
+	margin-left: 25%;
+	background: skyblue;
+}
+</style>
+</body>
+</html>
