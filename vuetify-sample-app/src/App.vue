@@ -1,19 +1,6 @@
 <template>
   <v-app id="app" toolbar footer>
-    <v-navigation-drawer persistent v-model="drawer" clipped :mini-variant.sync="mini">
-      <v-list dense>
-        <v-list-tile>
-          <v-list-tile-action>
-            <v-icon>home</v-icon>
-          </v-list-tile-action>
-          <v-list-tile-content>
-            <v-list-tile-title>
-              <router-link to="/">Home</router-link>
-            </v-list-tile-title>
-          </v-list-tile-content>
-        </v-list-tile>
-      </v-list>
-    </v-navigation-drawer>
+      <side-menu :drawer="drawer" :mini="mini"></side-menu>
     <v-toolbar>
       <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
       <v-btn icon @click.native.stop="mini = !mini">
@@ -33,7 +20,15 @@
 import Vue from 'vue'
 import Component from 'vue-class-component'
 
-@Component
+import Menu from '@/components/Menu.vue'
+
+@Component(
+  {
+    components: {
+      'side-menu': Menu
+    }
+  }
+)
 export default class App extends Vue {
   name = 'app';
   drawer = true;
