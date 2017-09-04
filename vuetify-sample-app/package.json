@@ -13,6 +13,7 @@
     "test": "npm run unit && npm run e2e"
   },
   "dependencies": {
+    "mdi": "^2.0.46",
     "vue": "^2.4.2",
     "vue-class-component": "^5.0.2",
     "vue-router": "^2.7.0",

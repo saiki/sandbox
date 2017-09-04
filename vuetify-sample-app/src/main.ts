@@ -5,6 +5,7 @@ import App from '@/App.vue'
 import router from './router'
 
 import '../node_modules/vuetify/dist/vuetify.min.css'
+import '../node_modules/mdi/css/materialdesignicons.min.css'
 
 Vue.use(Vuetify)
 
