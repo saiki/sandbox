@@ -1,18 +1,15 @@
 <template>
   <v-app id="app" toolbar footer>
-      <side-menu :drawer="drawer" :mini="mini"></side-menu>
-    <v-toolbar>
-      <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
-      <v-btn icon @click.native.stop="mini = !mini">
-        <v-icon>chevron_left</v-icon>
-      </v-btn>
-    </v-toolbar>
+    <side-menu :drawer="drawer" :mini="mini"></side-menu>
+    <app-header :drawer="drawer" :mini="mini" @mini="onResize" @drawer="onVisible"></app-header>
     <main>
       <v-container fluid>
         <router-view></router-view>
       </v-container>
     </main>
-    <v-footer></v-footer>
+    <v-footer>
+      Copyright Aaa
+    </v-footer>
   </v-app>
 </template>
 
@@ -21,17 +18,27 @@ import Vue from 'vue'
 import Component from 'vue-class-component'
 
 import Menu from '@/components/Menu.vue'
+import AppHeader from '@/components/AppHeader.vue'
 
 @Component(
   {
     components: {
-      'side-menu': Menu
+      'side-menu': Menu,
+      'app-header': AppHeader
     }
   }
 )
 export default class App extends Vue {
-  name = 'app';
   drawer = true;
   mini = false;
+  onVisible() {
+    if (!this.drawer) {
+      this.mini = false
+    }
+    this.drawer = !this.drawer
+  }
+  onResize() {
+    this.mini = !this.mini
+  }
 }
 </script>

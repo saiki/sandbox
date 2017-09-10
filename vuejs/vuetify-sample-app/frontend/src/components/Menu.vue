@@ -22,17 +22,8 @@
                 </v-list-tile-content>
             </v-list-tile>
         </v-list>
-        <v-footer fixed>
-            <v-list dense>
-                <v-list-tile>
-                    <v-list-tile-action>
-                        <v-icon>mdi-logout</v-icon>
-                    </v-list-tile-action>
-                    <v-list-tile-content>
-                        <v-list-tile-title>Logout</v-list-tile-title>
-                    </v-list-tile-content>
-                </v-list-tile>
-            </v-list>
+        <v-footer absolute v-show="footer">
+            <span>aaa</span>
         </v-footer>
     </v-navigation-drawer>
 </template>
@@ -48,5 +39,9 @@ import Component from 'vue-class-component'
     }
 })
 export default class Menu extends Vue {
+    mini: Boolean
+    get footer() {
+        return !this.mini
+    }
 }
 </script>
