@@ -1,5 +1,5 @@
 <template>
-    <v-toolbar>
+    <v-toolbar fixed>
       <v-toolbar-side-icon @click.stop="onClickSideIcon"></v-toolbar-side-icon>
       <v-btn icon @click.stop="onClickResize" v-show="drawer">
         <v-icon v-if="mini">chevron_right</v-icon>
